@@ -7,14 +7,13 @@ use Override;
 
 class HelperCustom extends Helper
 {
-    #[Override]
-    #[NoDiscard]
-    public function fizzBuzz(float|bool|int $number): int|string
+    #[Override, NoDiscard]
+    public function fizzBuzz(int|float|bool $number): int|string
     {
         $result = parent::fizzBuzz($number);
 
         return
             (int) $number % 30 === 0
-                ? (string) $result |> strtoupper(...) : $result;
+                ? $result |> strtoupper(...) : $result;
     }
 }
