@@ -18,10 +18,19 @@ fizzbuzz function Sample on php version 8.5 or later.
 
 When updating, execute the following command.
 
-```
+```bash
 herd coverage ./vendor/bin/pest --coverage
+```
+
+```bash
 ./vendor/bin/pest
+```
+
+```bash
 ./vendor/bin/pint
+```
+
+```bash
 ./vendor/bin/phpstan analyse src --level=10
 ```
 

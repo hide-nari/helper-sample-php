@@ -16,6 +16,6 @@ class HelperCustom extends Helper
 
         return
             (int) $number % 30 === 0
-                ? $result |> strtoupper(...) : $result;
+                ? (string) $result |> strtoupper(...) : $result;
     }
 }
