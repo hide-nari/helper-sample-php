@@ -1,10 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Hidenari\HelperSample;
 
 use NoDiscard;
+use TypeError;
 
 class Helper
 {
@@ -20,8 +19,10 @@ trait HelperTrait
 }
 
 #[NoDiscard]
-function fizzBuzz(int|float $number): int|string
+function fizzBuzz(int|float|bool $number): int|string
 {
+    is_bool($number) && throw new TypeError('bool type error');
+
     return
         ((int) $number % 3 === 0 ? 'fizz' : '').
         ((int) $number % 5 === 0 ? 'buzz' : '')

@@ -91,17 +91,35 @@ test('helper file fizzBuzz function test float pattern',
         ['30.1', 'fizzbuzz'],
     ]);
 
-test('helper file fizzBuzz function test bool error pattern',
-    function (bool $args) use ($trait) {
+test('helper file fizzBuzz function bool error pattern',
+    function (bool $args) {
         (void) fizzBuzz($args);
+    })
+    ->with([
+        [true],
+        [false],
+    ])
+    ->throws(TypeError::class, 'bool type error');
+
+test('helper file fizzBuzz function trait bool error pattern',
+    function (bool $args) use ($trait) {
         $trait->fizzBuzz($args);
+    })
+    ->with([
+        [true],
+        [false],
+    ])
+    ->throws(TypeError::class, 'bool type error');
+
+test('helper file fizzBuzz function class bool error pattern',
+    function (bool $args) {
         new Helper()->fizzBuzz($args);
     })
     ->with([
         [true],
         [false],
     ])
-    ->throws(TypeError::class);
+    ->throws(TypeError::class, 'bool type error');
 
 test('helper file fizzBuzz function test etc error pattern',
     function (null|string|array $args) use ($trait) {
