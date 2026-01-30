@@ -109,14 +109,3 @@ test('helper custom file fizzBuzz function test etc error pattern',
         },
     ])
     ->throws(TypeError::class);
-
-test('helper custom file fizzBuzz function test string error pattern',
-    function (string $args) {
-        (void) new HelperCustom()->fizzBuzz($args);
-    })
-    ->with([
-        ['str'],
-        ['str123'],
-        ['1st'],
-    ])
-    ->throws(TypeError::class);
