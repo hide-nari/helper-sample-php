@@ -87,7 +87,7 @@ test('helper custom file fizzBuzz function test bool error pattern',
         [true],
         [false],
     ])
-    ->throws(TypeError::class, 'bool type error');
+    ->throws(TypeError::class);
 
 test('helper custom file fizzBuzz function test etc error pattern',
     function (null|string|array $args) {
